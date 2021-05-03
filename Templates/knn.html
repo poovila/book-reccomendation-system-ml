@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class = "jumbotron text-center">
+<h1> Book reccomendation system </h1>
+<p class = "lead">Search Related books
+</p>
+</div>
+<body>
+{# navbar end #}
+<br>
+{#container#}
+<div class="container-fluid">
+    <div class="row " style="margin-left: 5%;">
+        <div class="col-sm-8 col-md-7 col-lg-6 mx-auto">
+            <div class="card card-signin  my-5">
+                <div class="card-body">
+                    <h4 class="card-title text-center">Book Recommendation System</h4>
+                    <hr>
+                    <br>
+                    <form action="{{ url_for('predict') }}" method="POST" enctype="multipart/form-data">
+
+                        <div class="form-label-group">
+                            <input type="text" id="book" name="book" class="form-control" placeholder="Book Title" required autofocus>
+                            <label for="book">Book Title</label>
+                        </div>
+                        <div class="container-fluid">
+                            <button type="submit"
+                                    class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" value="predict">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+{% endblock %}
